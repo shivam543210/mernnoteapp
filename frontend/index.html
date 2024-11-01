@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodNotes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>GoodNotes</h1>
+        <div class="nav-links">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" placeholder="Search Notes..." id="searchInput">
+        <button id="searchButton">🔍</button>
+    </div>
+
+    <!-- Notes Display Grid -->
+    <div class="notes-grid" id="notesContainer">
+        <!-- Notes will be dynamically inserted here -->
+    </div>
+
+    <!-- Floating Add Button -->
+    <button class="add-note-btn">+</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

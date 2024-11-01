@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar h1 {
+    font-size: 24px;
+    color: #1e90ff;
+}
+
+.nav-links a {
+    color: #333;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.search-container {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-container input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1200px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.note-card {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.note-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    white-space: nowrap; /* Prevents wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds ellipsis at the end */
+}
+
+.note-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    height: 40px; /* Limits the height for content */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds ellipsis at the end */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits the number of lines */
+    -webkit-box-orient: vertical;
+}
+
+.note-card .note-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-footer .date {
+    font-size: 12px;
+    color: #1e90ff;
+}
+
+.note-footer .actions {
+    display: flex;
+    gap: 5px;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #1e90ff;
+    font-size: 16px;
+}
+
+.add-note-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e90ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Styles for Form Container */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto; /* Centers the form vertically with some spacing */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #1e90ff;
+    font-size: 24px;
+}
+
+.form-container label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1e90ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #1c7ed6;
+}
+
+.form-container p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.form-container a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
