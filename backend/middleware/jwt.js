@@ -38,6 +38,9 @@ const auth = (req, res, next) => {
 };
 
 // Function to generate a JWT token with user ID in payload
-
+const generateToken = (user) => {
+    // Ensure user._id is passed in as part of the payload
+    return jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: "10h" });
+};
 
 module.exports = { auth, generateToken };
