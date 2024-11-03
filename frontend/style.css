@@ -93,7 +93,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis; /* Adds ellipsis at the end */
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limits the number of lines */
+    
     -webkit-box-orient: vertical;
 }
 
