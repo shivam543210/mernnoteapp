@@ -12,14 +12,13 @@ const auth = (req, res, next) => {
     }
 
     const token = authHeader.split(" ")[1];
-    console.log("Extracted Token:", token); // Log the extracted token to verify
+ 
     
     try {
-        // Verify the token
+        
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
     
-        // Log the decoded token to verify its structure
-        console.log("Decoded token:", decoded);
+       
     
         // Attach user ID to req.user only if decoded.userId exists
         if (decoded.userId) {
@@ -39,8 +38,8 @@ const auth = (req, res, next) => {
 
 // Function to generate a JWT token with user ID in payload
 const generateToken = (user) => {
-    // Ensure user._id is passed in as part of the payload
-    return jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: "10h" });
+    
+    return jwt.sign({ userId: user.userId }, process.env.JWT_SECRET, { expiresIn: "10h" });
 };
 
 module.exports = { auth, generateToken };
