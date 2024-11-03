@@ -49,7 +49,7 @@ router.post(
             const note = new Note({
                 title: req.body.title,
                 description: req.body.description,
-                userId: req.user.id, // Attach authenticated user's ID
+                userId: req.user.user.id, // Attach authenticated user's ID
             });
 
             // Save the note to the database

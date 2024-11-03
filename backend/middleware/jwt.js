@@ -17,12 +17,13 @@ const auth = (req, res, next) => {
     try {
         
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    
+        console.log("Decoded Token:", decoded); // Log the decoded token to see what's being received
        
     
         // Attach user ID to req.user only if decoded.userId exists
         if (decoded.userId) {
             req.user = { id: decoded.userId };
+            console.log("User ID:", req.user.id); // Log the user ID to see what's being received
         } else {
             console.error("userId not found in decoded token");
             return res.status(401).json({ message: "Unauthorized" });
@@ -38,7 +39,7 @@ const auth = (req, res, next) => {
 
 // Function to generate a JWT token with user ID in payload
 const generateToken = (user) => {
-    
+
     return jwt.sign({ userId: user.userId }, process.env.JWT_SECRET, { expiresIn: "10h" });
 };
 
