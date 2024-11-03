@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) throw new Error('Signup failed');
 
             // Redirect to the login page after successful signup
-            window.location.href = 'index.html'; //i change instead of login.html to index.html
+            window.location.href = 'index.html';
+            // remove the login button 
+            
         } catch (error) {
             console.error('Error signing up:', error);
             alert('Signup failed. Please try again.');
