@@ -2,6 +2,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const notesContainer = document.getElementById('notesContainer');
     const addNoteButton = document.querySelector('.add-note-btn');
     const apiUrl = 'http://localhost:5000'; // Update to the correct endpoint
+    const logoutButton = document.getElementById('logoutButton'); // Add reference to the logout button
+    const navLinks = document.querySelector('.nav-links');
+
+    // Show/hide navbar items based on authentication
+    function updateNavbar() {
+        const token = localStorage.getItem('token');
+        if (token) {
+            logoutButton.style.display = 'block'; // Show logout button
+            navLinks.querySelector('a[href="login.html"]').style.display = 'none'; // Hide login link
+            navLinks.querySelector('a[href="signup.html"]').style.display = 'none'; // Hide signup link
+        } else {
+            logoutButton.style.display = 'none'; // Hide logout button
+            navLinks.querySelector('a[href="login.html"]').style.display = 'block'; // Show login link
+            navLinks.querySelector('a[href="signup.html"]').style.display = 'block'; // Show signup link
+        }
+    }
+
+    // Call updateNavbar on page load
+    updateNavbar();
+
+    // Logout function
+    function logout() {
+        localStorage.removeItem('token'); // Clear the token
+        alert("You have been logged out.");
+        updateNavbar(); // Update navbar visibility
+        window.location.href = 'login.html'; // Redirect to login page
+    }
+
+    // Logout button click event
+    logoutButton.addEventListener('click', logout);
 
     // Fetch and display all notes
     async function fetchNotes() {
