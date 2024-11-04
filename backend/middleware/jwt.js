@@ -2,17 +2,17 @@ const jwt = require("jsonwebtoken");
 
 // Middleware to authenticate the user
 const auth = (req, res, next) => {
-    const authHeader = req.headers.authorization;
-    console.log("Authorization Header:", authHeader); // Log the header to see what's being received
+    const token = req.headers.authorization.split(" ")[1]
+    // console.log("Authorization Header:", authHeader); 
 
-    // Check if the header exists and starts with "Bearer "
-    if (!authHeader || !authHeader.startsWith("Bearer ")) {
-        console.log("Unauthorized - Incorrect Header Format or Missing"); // Log the error cause
-        return res.status(401).json({ message: "Unauthorized" });
-    }
+    // // Check if the header exists and starts with "Bearer "
+    // if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    //     console.log("Unauthorized - Incorrect Header Format or Missing"); // Log the error cause
+    //     return res.status(401).json({ message: "Unauthorized" });
+    // }
 
-    const token = authHeader.split(" ")[1];
- 
+    // const token = authHeader.split(" ")[1];
+ console.log("Token:", token); // Log the token to see what's being received
     
     try {
         
